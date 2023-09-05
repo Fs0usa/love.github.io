@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Feliz 1 mês</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <!-- Incluindo o jQuery (certifique-se de baixar a versão mais recente) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Incluindo o Bootstrap JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <style>
+    body {
+  height: 100vh;
+}
+
+.botaonext {
+  position: absolute;
+  bottom: 40px;
+  left: calc(50% - 60px);  
+}
+
+.botaonext button, .botaonext button:hover { background-color: #ba0001; color: white; width: 120px; }
+
+.main-col {
+  height: 100vh !important;
+}
+
+.h-100 { height: 100vh; }
+
+#container1 input {
+  margin-top: 20px;
+}
+
+#container3 img {
+  margin-top: 20px;
+  height: 250px;
+}
+
+.cont-img {
+  width: 99%;
+  height: 350px;
+  margin: 0 auto;
+  background-image: url("https://i.imgur.com/OEAZ21v.jpeg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ulttext {  
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 28px;
+  line-height: 1.8;
+  font-family: 'Shadows Into Light', cursive;
+}
+  </style>
+</head>
+<body>
+ 
+  <!-- Botão para alternar o conteúdo -->
+<div class="text-center mt-3 botaonext">
+    <button class="btn btn-primary" id="alternarConteudo">Próximo</button>
+</div>
+  
+  <!-- Containers em tela cheia -->
+<div class="container-fluid h-100 main-col" id="container1">
+    <div class="row h-100">
+        <div class="col-12 align-self-center text-center">
+            <h1 class="mb-4">Antes de começar, vamos a um quiz!</h1>
+            <h6>Valendo um beijinho, qual o nome do amor do Felipe?</h6>
+            <input type="text" class="form-control" id="nomeInput" aria-describedby="basic-addon2">
+            
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid h-100" id="container2">
+    <div class="row h-100">
+        <div class="col-12 align-self-center text-center">
+            <h1>Aeeee! ganhou um beijinho!!!</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid h-100" id="container3">
+    <div class="row h-100">
+        <div class="col-12 align-self-center text-center">
+            <h1>Uma vez, o Felipe disse...</h1>
+          <div class="cont-img"></div>
+    </div>
+</div>
+</div>
+  
+  <div class="container-fluid h-100" id="container4">
+    <div class="row h-100">
+        <div class="col-12 align-self-center">
+          <p class="ulttext">Eu ter te conhecido foi ao acaso, a vida quis assim... A gente ter se aproximado foi uma escolha mas te amar, é algo que não pude controlar</p>
+          
+          <br/>
+          <p>Te amo!!!</p>
+    </div>
+  
+  
+</body>
+    
+    <script>
+      $(document).ready(function() {
+    // Inicialmente, ocultamos todos os containers, exceto o primeiro
+    $("#container4, #container2, #container3").hide();
+
+    // Quando o botão é clicado, alternamos os containers
+    $("#alternarConteudo").click(function() {
+        var nomeDigitado = $("#nomeInput").val();
+        if (nomeDigitado === "Maíra Lorranny Cardeal Pereira") {
+            if ($("#container1").is(":visible")) {
+                $("#container1").hide();
+                $("#container2").show();
+            } else if ($("#container2").is(":visible")) {
+                $("#container2").hide();
+                $("#container3").show();
+            } else if ($("#container3").is(":visible")) {
+                $("#container3").hide();
+                $("#container4").show();
+              $("#alternarConteudo").hide();
+            } 
+        } else {
+            alert("Só tem uma opção válida, tente novamente!");
+        }
+    });
+});
+    </script>
+</html>
